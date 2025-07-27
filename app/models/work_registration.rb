@@ -1,0 +1,2 @@
+class WorkRegistration < ApplicationRecord
+end

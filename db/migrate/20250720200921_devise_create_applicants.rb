@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class DeviseCreateAdmins < ActiveRecord::Migration[8.0]
+class DeviseCreateApplicants < ActiveRecord::Migration[8.0]
   def change
-    create_table :admins do |t|
+    create_table :applicants do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -18,8 +18,8 @@ class DeviseCreateAdmins < ActiveRecord::Migration[8.0]
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
-      # t.string   :current_sign_in_ip
-      # t.string   :last_sign_in_ip
+      t.string   :current_sign_in_ip
+      t.string   :last_sign_in_ip
 
       ## Confirmable
       t.string   :confirmation_token
@@ -32,12 +32,19 @@ class DeviseCreateAdmins < ActiveRecord::Migration[8.0]
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
 
+      t.string :full_name, null: false
+      t.string :professional_name
+      t.string :cellphone
+      t.string :type_of_applicant # professional or student
+      t.boolean :associated
+
       t.timestamps null: false
     end
 
-    add_index :admins, :email,                unique: true
-    add_index :admins, :reset_password_token, unique: true
-    # add_index :admins, :confirmation_token,   unique: true
-    # add_index :admins, :unlock_token,         unique: true
+    add_index :applicants, :email,                unique: true
+    add_index :applicants, :reset_password_token, unique: true
+
+    # add_index :applicants, :confirmation_token,   unique: true
+    # add_index :applicants, :unlock_token,         unique: true
   end
 end
