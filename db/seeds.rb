@@ -33,4 +33,3 @@ if ActiveRecord::Base.connection.table_exists?('categories')
   Category.create(name: "Fotojornalismo", type_of_category: "Universitário")
   Category.create(name: "Projeto Especial em Jornalismo", type_of_category: "Universitário")
 end
-
