@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      applicant: "Candidato"
+    attributes:
+      applicant:
+        full_name: "Nome completo"
+        professional_name: "Nome profissional"
+        cellphone: "Celular"
+        type_of_applicant: "Tipo de candidato"
+        associated: "É sócio da ARI?"
+        email: "E-mail"
+        password: "Senha"
+  helpers:
+    submit:
+      create: "Cadastrar %{model}"

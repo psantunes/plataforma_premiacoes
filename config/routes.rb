@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "applicants/new"
+  get "applicants/create"
   get "home/index"
   devise_for :organizers
   devise_for :applicants
@@ -17,5 +19,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "home#index"
-
+  
+  resources :applicants, only: [:new, :create]
 end

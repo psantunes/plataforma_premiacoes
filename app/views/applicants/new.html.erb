@@ -1,0 +1,42 @@
+<h1>Cadastro</h1>
+
+<%= form_with(model: @applicant) do |form| %>
+  <div>
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div>
+    <%= form.label :professional_name %>
+    <%= form.text_field :professional_name %>
+  </div>
+
+  <div>
+    <%= form.label :cellphone %>
+    <%= form.text_field :cellphone %>
+  </div>
+
+  <div>
+    <%= form.label :type_of_applicant %>
+    <%= form.select :type_of_applicant, ['professional', 'student'] %>
+  </div>
+
+  <div>
+    <%= form.label :associated %>
+    <%= form.check_box :associated %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit "Cadastrar" %>
+  </div>
+<% end %>
