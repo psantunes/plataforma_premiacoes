@@ -4,13 +4,15 @@ pt-BR:
       applicant: "Candidato"
     attributes:
       applicant:
+        cpf: "CPF"
         full_name: "Nome completo"
         professional_name: "Nome profissional"
         cellphone: "Celular"
         type_of_applicant: "Tipo de candidato"
-        associated: "É sócio da ARI?"
+        associated: "É associado da ARI"
         email: "E-mail"
         password: "Senha"
+        password_confirmation: "Confirmação da senha"
   helpers:
     submit:
       create: "Cadastrar %{model}"

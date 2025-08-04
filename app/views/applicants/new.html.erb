@@ -1,42 +1,103 @@
-<h1>Cadastro</h1>
+<h1 class="mb-4">Cadastro</h1>
 
-<%= form_with(model: @applicant) do |form| %>
-  <div>
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name %>
-  </div>
+<%= form_with(model: @applicant, html: { class: "needs-validation" }) do |form| %>
+  <div class="container p-4 border rounded shadow-sm bg-light">
+    
+    <%# CPF %>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <%= form.label :cpf, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.text_field :cpf, placeholder: "000.000.000-00", class: "form-control" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :professional_name %>
-    <%= form.text_field :professional_name %>
-  </div>
+    <%# Nome completo %>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <%= form.label :full_name, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.text_field :full_name, class: "form-control" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :cellphone %>
-    <%= form.text_field :cellphone %>
-  </div>
+    <%# Nome profissional %>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <%= form.label :professional_name, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.text_field :professional_name, class: "form-control" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :type_of_applicant %>
-    <%= form.select :type_of_applicant, ['professional', 'student'] %>
-  </div>
+    <%# Celular %>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <%= form.label :cellphone, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.text_field :cellphone, placeholder: "(00) 00000-0000", class: "form-control" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :associated %>
-    <%= form.check_box :associated %>
-  </div>
+    <%# Email %>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <%= form.label :email, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.email_field :email, class: "form-control" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
+    <%# Tipo de requerente %>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <%= form.label :type_of_applicant, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.select :type_of_applicant, ['Jornalista profissional', 'Estudante de jornalismo'], {}, class: "form-select" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <%# Associado (checkbox inline) %>
+    <div class="row mb-3">
+      <div class="col-md-3"> </div>
+      <div class="col-md-9 d-flex align-items-center">
+        <%= form.check_box :associated, class: "form-check-input me-2" %>
+        <%= form.label :associated, "Sou associado da ARI", class: "form-check-label mb-0" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.submit "Cadastrar" %>
+    <%# Senha %>
+    <div class="row mb-4">
+      <div class="col-md-3">
+        <%= form.label :password, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+
+    <%# Senha %>
+    <div class="row mb-4">
+      <div class="col-md-3">
+        <%= form.label :password_confirmation, class: "form-label fw-bold" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+
+    <%# Botão de envio %>
+    <div class="row">
+      <div class="col-md-12 text-end">
+        <%= form.submit "Cadastrar", class: "btn btn-primary px-4" %>
+      </div>
+    </div>
+
   </div>
 <% end %>
