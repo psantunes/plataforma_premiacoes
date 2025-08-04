@@ -52,7 +52,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_27_213053) do
     t.string "full_name", null: false
     t.string "professional_name"
     t.string "cellphone"
-    t.string "type"
+    t.string "type_of_applicant"
     t.boolean "associated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,7 +99,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_27_213053) do
     t.string "unlock_token"
     t.datetime "locked_at"
     t.string "name", null: false
-    t.string "type", null: false
+    t.string "type_of_organizer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_organizers_on_email", unique: true
@@ -108,7 +108,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_27_213053) do
 
   create_table "work_registrations", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "applicants_id"
-    t.string "tile"
+    t.string "title"
     t.string "category"
     t.text "description"
     t.string "work_link"

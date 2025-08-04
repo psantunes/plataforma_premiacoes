@@ -33,7 +33,7 @@ class DeviseCreateOrganizers < ActiveRecord::Migration[8.0]
       t.datetime :locked_at
 
       t.string :name, null: false
-      t.string :type, null: false # administrator or juror
+      t.string :type_of_organizer, null: false # administrator or juror
 
       t.timestamps null: false
     end
