@@ -1,15 +1,17 @@
-<h1 class="mb-4">Cadastro</h1>
-
 <%= form_with(model: @applicant, html: { class: "needs-validation" }) do |form| %>
+
+    <h1 class="mb-4 text-center mt-2 text-uppercase"><%= t("helpers.submit.create", model: @applicant.model_name.human) %></h1>
+
+
   <div class="container p-4 border rounded shadow-sm bg-light">
-    
+   
     <%# CPF %>
     <div class="row mb-3">
       <div class="col-md-3">
         <%= form.label :cpf, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.text_field :cpf, placeholder: "000.000.000-00", class: "form-control" %>
+        <%= form.text_field :cpf, required: true , placeholder: "000.000.000-00", class: "form-control" %>
       </div>
     </div>
 
@@ -19,7 +21,7 @@
         <%= form.label :full_name, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.text_field :full_name, class: "form-control" %>
+        <%= form.text_field :full_name, required: true, class: "form-control" %>
       </div>
     </div>
 
@@ -39,7 +41,7 @@
         <%= form.label :cellphone, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.text_field :cellphone, placeholder: "(00) 00000-0000", class: "form-control" %>
+        <%= form.text_field :cellphone, required: true, placeholder: "(00) 00000-0000", class: "form-control" %>
       </div>
     </div>
 
@@ -49,7 +51,7 @@
         <%= form.label :email, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.email_field :email, class: "form-control" %>
+        <%= form.email_field :email, required: true , class: "form-control" %>
       </div>
     </div>
 
@@ -59,7 +61,7 @@
         <%= form.label :type_of_applicant, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.select :type_of_applicant, ['Jornalista profissional', 'Estudante de jornalismo'], {}, class: "form-select" %>
+        <%= form.select :type_of_applicant, ['', 'Jornalista profissional', 'Estudante de jornalismo'], {}, class: "form-select" %>
       </div>
     </div>
 
@@ -78,7 +80,7 @@
         <%= form.label :password, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.password_field :password, class: "form-control" %>
+        <%= form.password_field :password, required: true , class: "form-control" %>
       </div>
     </div>
 
@@ -88,14 +90,14 @@
         <%= form.label :password_confirmation, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.password_field :password, class: "form-control" %>
+        <%= form.password_field :password, required: true , class: "form-control" %>
       </div>
     </div>
 
     <%# Botão de envio %>
     <div class="row">
       <div class="col-md-12 text-end">
-        <%= form.submit "Cadastrar", class: "btn btn-primary px-4" %>
+        <%= form.submit t("helpers.submit.create", model: @applicant.model_name.human), class: "btn btn-primary px-4" %>
       </div>
     </div>
 
