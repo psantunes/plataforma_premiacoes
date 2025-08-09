@@ -5,6 +5,6 @@
     "sass": "^1.89.2"
   },
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/rails_admin.scss:./app/assets/builds/rails_admin.css --no-source-map --load-path=node_modules"
+  "build:css": "sh -c 'if [ \"$RAILS_ENV\" != \"test\" ]; then sass ./app/assets/stylesheets/rails_admin.scss:./app/assets/builds/rails_admin.css --no-source-map --load-path=node_modules; fi'"
   }
-}
+}  
