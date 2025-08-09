@@ -1,21 +1,19 @@
-<%= form_with(model: @applicant, html: { class: "needs-validation" }) do |form| %>
+<h1 class="mb-4 text-center mt-2 text-uppercase"><%= t("helpers.submit.create", model: resource.model_name.human) %></h1>
 
-    <h1 class="mb-4 text-center mt-2 text-uppercase"><%= t("helpers.submit.create", model: @applicant.model_name.human) %></h1>
-
-
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "needs-validation" }, data: { turbo: false }) do |form| %>
   <div class="container p-4 border rounded shadow-sm bg-light">
-   
-    <%# CPF %>
-    <div class="row mb-3">
-      <div class="col-md-3">
-        <%= form.label :cpf, class: "form-label fw-bold" %>
-      </div>
-      <div class="col-md-9">
-        <%= form.text_field :cpf, required: true , placeholder: "000.000.000-00", class: "form-control" %>
-      </div>
-    </div>
 
-    <%# Nome completo %>
+    <% if resource.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= t("errors.messages.form_errors", count: resource.errors.count) %></h4>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
     <div class="row mb-3">
       <div class="col-md-3">
         <%= form.label :full_name, class: "form-label fw-bold" %>
@@ -25,7 +23,6 @@
       </div>
     </div>
 
-    <%# Nome profissional %>
     <div class="row mb-3">
       <div class="col-md-3">
         <%= form.label :professional_name, class: "form-label fw-bold" %>
@@ -57,7 +54,7 @@
 
     <%# Tipo de requerente %>
     <div class="row mb-3">
-      <div class="col-md-3">
+      <div class="col-md-3">  
         <%= form.label :type_of_applicant, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
@@ -90,14 +87,14 @@
         <%= form.label :password_confirmation, class: "form-label fw-bold" %>
       </div>
       <div class="col-md-9">
-        <%= form.password_field :password, required: true , class: "form-control" %>
+        <%= form.password_field :password_confirmation, required: true , class: "form-control" %>
       </div>
     </div>
 
     <%# Botão de envio %>
     <div class="row">
       <div class="col-md-12 text-end">
-        <%= form.submit t("helpers.submit.create", model: @applicant.model_name.human), class: "btn btn-primary px-4" %>
+        <%= form.submit t("helpers.submit.create", model: resource.model_name.human), class: "btn btn-primary px-4" %>
       </div>
     </div>
 

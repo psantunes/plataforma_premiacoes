@@ -13,6 +13,19 @@ pt-BR:
         email: "E-mail"
         password: "Senha"
         password_confirmation: "Confirmação da senha"
+    errors:
+      models:
+        applicant:
+          attributes:
+            password_confirmation:
+              confirmation: "A confirmação da senha não coincide"
   helpers:
     submit:
       create: "Cadastrar %{model}"
+  errors:
+    messages:
+      not_saved: "Não conseguimos salvar %{resource}. Verifique os erros abaixo:"
+      confirmation: "não coincide com a senha digitada"
+      too_short: "é muito curta (mínimo de %{count} caracteres)"
+      form_errors:  "Verifique os erros abaixo:"
+      taken: "já está em uso"

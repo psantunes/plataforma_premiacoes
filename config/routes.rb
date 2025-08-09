@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "applicants/create"
   get "home/index"
   devise_for :organizers
-  devise_for :applicants
+  devise_for :applicants, controllers: { registrations: 'applicants/registrations' }
   devise_for :admins
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -19,5 +19,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "home#index"
-  resources :applicants, only: [ :new, :create ]
 end
