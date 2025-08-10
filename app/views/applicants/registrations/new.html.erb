@@ -32,7 +32,6 @@
       </div>
     </div>
 
-    <%# Celular %>
     <div class="row mb-3">
       <div class="col-md-3">
         <%= form.label :cellphone, class: "form-label fw-bold" %>
@@ -42,7 +41,6 @@
       </div>
     </div>
 
-    <%# Email %>
     <div class="row mb-3">
       <div class="col-md-3">
         <%= form.label :email, class: "form-label fw-bold" %>
@@ -52,7 +50,6 @@
       </div>
     </div>
 
-    <%# Tipo de requerente %>
     <div class="row mb-3">
       <div class="col-md-3">  
         <%= form.label :type_of_applicant, class: "form-label fw-bold" %>
@@ -62,7 +59,6 @@
       </div>
     </div>
 
-    <%# Associado (checkbox inline) %>
     <div class="row mb-3">
       <div class="col-md-3"> </div>
       <div class="col-md-9 d-flex align-items-center">
@@ -71,7 +67,6 @@
       </div>
     </div>
 
-    <%# Senha %>
     <div class="row mb-4">
       <div class="col-md-3">
         <%= form.label :password, class: "form-label fw-bold" %>
@@ -81,7 +76,6 @@
       </div>
     </div>
 
-    <%# Senha %>
     <div class="row mb-4">
       <div class="col-md-3">
         <%= form.label :password_confirmation, class: "form-label fw-bold" %>
@@ -91,7 +85,6 @@
       </div>
     </div>
 
-    <%# Botão de envio %>
     <div class="row">
       <div class="col-md-12 text-end">
         <%= form.submit t("helpers.submit.create", model: resource.model_name.human), class: "btn btn-primary px-4" %>
