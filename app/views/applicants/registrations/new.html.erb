@@ -4,7 +4,7 @@
   <div class="container p-4 border rounded shadow-sm bg-light">
 
     <% if resource.errors.any? %>
-      <div class="alert alert-danger">
+      <div id="error_explanation" class="alert alert-danger">
         <h4><%= t("errors.messages.form_errors", count: resource.errors.count) %></h4>
         <ul>
           <% resource.errors.full_messages.each do |message| %>
