@@ -1,0 +1,2 @@
+module Applicants::ConfirmationsHelper
+end

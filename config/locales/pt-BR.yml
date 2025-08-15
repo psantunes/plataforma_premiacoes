@@ -22,6 +22,7 @@ pt-BR:
   helpers:
     submit:
       create: "Cadastrar %{model}"
+      sign_in: "Login de %{model}"
   errors:
     messages:
       not_saved: "Não conseguimos salvar %{resource}. Verifique os erros abaixo:"
